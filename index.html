@@ -6,26 +6,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PokéSurvivor – Juego Pokémon gratis online estilo Survivor.io</title>
 <meta name="description" content="Sobrevive a hordas de Pokémon con tu compañero en este fan game gratis para navegador y móvil: 966 Pokémon, shinies, legendarios y cooperativo con amigos. Sin descargas ni anuncios.">
-<link rel="canonical" href="https://pokesurvivor.com/">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#0a1430">
-<meta name="color-scheme" content="dark">
-<!-- Compartir en redes (WhatsApp, Discord, Twitter/X...) -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="PokéSurvivor">
-<meta property="og:locale" content="es_ES">
-<meta property="og:url" content="https://pokesurvivor.com/">
-<meta property="og:title" content="PokéSurvivor – Sobrevive a las hordas Pokémon">
-<meta property="og:description" content="Fan game gratis para navegador y móvil: 966 Pokémon, shinies, legendarios y cooperativo hasta 4 amigos. Sin descargas ni anuncios.">
-<meta property="og:image" content="https://pokesurvivor.com/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="PokéSurvivor: un Pokémon rodeado de hordas en un mapa pixel art">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PokéSurvivor – Sobrevive a las hordas Pokémon">
-<meta name="twitter:description" content="Fan game gratis para navegador y móvil, con cooperativo hasta 4. Sin descargas ni anuncios.">
-<meta name="twitter:image" content="https://pokesurvivor.com/assets/og-image.jpg">
-<script>window.PS_PAGES = true;</script>
 <link rel="manifest" href="manifest.webmanifest">
 <!-- Google sólo enseña en los resultados iconos de 48 px o múltiplos -->
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -39,39 +19,6 @@
 <meta name="apple-mobile-web-app-title" content="PokéSurvivor">
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
-<!-- Datos estructurados para Google (tipo de página: videojuego gratuito) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://pokesurvivor.com/#web",
-      "url": "https://pokesurvivor.com/",
-      "name": "PokéSurvivor",
-      "inLanguage": "es"
-    },
-    {
-      "@type": ["VideoGame", "WebApplication"],
-      "@id": "https://pokesurvivor.com/#juego",
-      "name": "PokéSurvivor",
-      "url": "https://pokesurvivor.com/",
-      "description": "Fan game gratuito de supervivencia (bullet heaven, estilo Survivor.io) con Pokémon: elige compañero, sobrevive a hordas, sube de nivel, evoluciona tus ataques, enfréntate a legendarios en grietas y juega en cooperativo con hasta 4 amigos.",
-      "image": "https://pokesurvivor.com/assets/og-image.jpg",
-      "inLanguage": "es",
-      "genre": ["Roguelike", "Bullet heaven", "Acción", "Supervivencia"],
-      "gamePlatform": ["Navegador web", "PC", "Android", "iOS"],
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "Cualquiera con navegador web moderno",
-      "playMode": ["SinglePlayer", "CoOp", "MultiPlayer"],
-      "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 4 },
-      "isAccessibleForFree": true,
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" },
-      "isPartOf": { "@id": "https://pokesurvivor.com/#web" }
-    }
-  ]
-}
-</script>
 <link rel="stylesheet" href="css/style.css">
 <style>/* perso: cuadro central del menú (tu Pokémon + niveles); aquí porque style.css se queda en caché */
 .play-panel { display: flex; gap: 18px; align-items: stretch; margin: 10px auto 0; padding: 14px 16px; max-width: 640px;
@@ -188,7 +135,7 @@
 <section id="scr-login" class="scr hidden">
   <div class="box" style="width:min(420px,100%)">
     <div class="logo">
-      <img class="logo-img" src="assets/ui/logo-intox.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
+      <img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
     </div>
     <p class="login-tag">Sobrevive a las hordas con tu compañero Pokémon · gratis, en PC y móvil</p>
     <div class="tabs">
@@ -216,7 +163,7 @@
       <button id="btn-guest" class="btn ghost grow" type="button">Jugar como invitado</button>
     </div>
     <p class="note center" id="login-mode"></p>
-    <p class="note center"><a href="guia/">Guía</a> · <a href="pokedex/">Pokédex</a> · <a href="#" class="legal-link" data-legal>Aviso legal y privacidad</a></p>
+    <p class="note center"><a href="#" class="legal-link" data-legal>Aviso legal y privacidad</a></p>
   </div>
 </section>
 
@@ -263,7 +210,7 @@
 <section id="scr-menu" class="scr hidden">
   <div class="menu-left">
     <div class="logo">
-      <img class="logo-img" src="assets/ui/logo-intox.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
+      <img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
     </div>
     <!-- perso: cuadro central: tu Pokémon (clic: sus mejoras) y la elección del nivel -->
     <div class="play-panel">
@@ -297,6 +244,8 @@
         <button class="menu-item" data-go="rank">Ranking<small>Arceus, nivel y DPS</small></button>
       </div>
     </div>
+    <!-- perso (18-10): en el móvil el logo va aquí, bajo el menú (arriba a la izquierda no cabe) -->
+    <div class="logo logo-phone"><img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no"></div>
     <div class="box" style="padding:14px 18px">
       <div id="menu-stats" style="font-size:14px;color:var(--muted)"></div>
     </div>
@@ -437,7 +386,7 @@
       <h1>PokéSurvivor</h1>
       <p>PokéSurvivor necesita JavaScript para funcionar. Actívalo para jugar.</p>
       <p>Fan game gratuito de supervivencia con 966 Pokémon de las 9 regiones: elige tu compañero, sobrevive a las hordas, evoluciona tus ataques, enfréntate a legendarios y juega en cooperativo con hasta 4 amigos.</p>
-      <p><a href="guia/">Guía del juego</a> · <a href="pokedex/">Pokédex: todos los Pokémon jugables</a></p>    </div>
+          </div>
   </div>
 </noscript>
 
@@ -588,11 +537,20 @@
         <div class="row" style="margin-top:8px">
           <label for="upg-mon" style="margin:0">Pokémon</label>
           <select id="upg-mon" class="field" style="width:auto;min-width:220px"></select>
-          <button id="upg-ct" class="btn small gold" data-sfx="none" style="margin-left:8px">Aprender una CT</button>
+          <button id="upg-moves" class="btn small gold" data-sfx="select" style="margin-left:8px">Modificar los movimientos</button>
+          <button id="upg-ct" class="btn small gold" data-sfx="none" style="margin-left:auto">Aprender una CT</button>
         </div>
       </div>
     </div>
     <div class="upg" id="upg-list"></div>
+  </div>
+</section>
+
+<!-- ====== Perso (18-10): Modificar los movimientos (desde Mejoras) ====== -->
+<section id="scr-moves" class="scr dim hidden">
+  <div class="box mv-box">
+    <div class="row between"><h2>Modificar los movimientos</h2><button id="mv-back" class="btn small ghost" data-sfx="none">Volver</button></div>
+    <div class="panel" id="mv-detail"></div>
   </div>
 </section>
 
@@ -636,7 +594,7 @@
 <section id="scr-levelup" class="scr dim hidden">
   <div class="box center">
     <h2>¡Nivel <span id="lvl-num">2</span>!</h2>
-    <p class="sub">Elige una recompensa · <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></p>
+    <p class="sub">Elige una recompensa · <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></p>
     <div id="cards" class="cards"></div>
     <button id="lvl-reroll" class="btn small ghost hidden" data-sfx="none" style="margin-top:10px">Cambiar opciones (<span id="lvl-rr-n">1</span>) · <kbd>R</kbd></button>
     <p id="lvl-pts" class="note hidden" translate="no" style="color:#ffd23f;font-weight:700"></p>
@@ -666,15 +624,17 @@
 <section id="scr-pause" class="scr dim hidden">
   <div class="box center" style="width:min(460px,100%)">
     <h2>Pausa</h2>
-    <p class="sub kbd-hint"><kbd>WASD</kbd> moverse · <kbd>1</kbd>–<kbd>4</kbd> movimiento · <kbd>Q</kbd>/<kbd>E</kbd> ciclar · <kbd>Esc</kbd> pausa</p>
+    <div class="sub kbd-hint pause-keys"><span><kbd>WASD</kbd> <i>moverse</i></span><span><kbd>1</kbd>–<kbd>4</kbd> <i>movimiento</i></span><span><kbd>Q</kbd>/<kbd>E</kbd> <i>ciclar</i></span><span><kbd>Esc</kbd> <i>pausa</i></span></div>
     <p class="sub touch-hint">Arrastra el dedo para moverte · toca un ataque para cambiarlo</p>
     <p id="pause-coop" class="note hidden">Partida en grupo: el juego sigue mientras estás aquí.</p>
     <div id="pause-sound" class="sound-inline"></div>
-    <div class="row" style="justify-content:center">
-      <button id="btn-resume" class="btn gold">Continuar</button>
+    <!-- perso (18-10): botones en rejilla (Continuar ancho; Ajustes · ATH; Abandonar abajo) -->
+    <div class="pause-grid">
+      <button id="btn-resume" class="btn gold pg-wide">Continuar</button>
       <button id="btn-pause-settings" class="btn">Ajustes</button>
       <button id="btn-pause-hud" class="btn">ATH</button>
-      <button id="btn-quit" class="btn">Abandonar run</button>
+      <button id="btn-save-run" class="btn pg-wide" data-sfx="none">Guardar la run y salir</button>
+      <button id="btn-quit" class="btn danger pg-wide">Abandonar run</button>
     </div>
   </div>
 </section>
@@ -689,7 +649,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=9a5dbd8c2e"></script>
+<script defer src="js/app.min.js?v=9cd6f31e6e"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>

@@ -53,7 +53,7 @@ input { font: inherit; }
 .scr.hidden { display: none; }
 /* Pantallas que se abren con la barra superior a la vista: empiezan debajo de ella. */
 @media (min-height: 521px) {
-  #scr-goals, #scr-dex, #scr-upgrades, #scr-gacha, #scr-friends, #scr-rank, #scr-lobby, #scr-profile { padding-top: 66px; }
+  #scr-goals, #scr-dex, #scr-upgrades, #scr-gacha, #scr-friends, #scr-rank, #scr-lobby, #scr-profile, #scr-moves { padding-top: 66px; }
 }
 .scr.dim { background: radial-gradient(circle at 50% 40%, rgba(10,20,50,.55), rgba(3,6,16,.88)); }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
@@ -934,3 +934,68 @@ div.tm-row { cursor: default; }
 #lex-tip .lt-h { margin: 8px 0 3px; color: #8fa3c4; font-weight: 800; text-transform: uppercase; font-size: 11px; }
 #lex-tip ul { margin: 0; padding: 0; list-style: none; }
 #lex-tip li { margin: 2px 0; }
+
+/* Perso (18-10): amigos «En jeu» y aviso de invitación en partida */
+.dot.play { animation: dotPlay 1.2s ease-in-out infinite; }
+@keyframes dotPlay { 0%, 100% { box-shadow: 0 0 2px var(--gold); } 50% { box-shadow: 0 0 9px 2px var(--gold); } }
+.fr-row.playing .st { color: var(--gold); font-weight: 800; }
+.fr-row.playing .st::before { content: '🎮 '; }
+#inv-note { position: fixed; right: 12px; top: 50%; transform: translate(120%, -50%); z-index: 80; max-width: min(340px, 70vw);
+  padding: 10px 14px; border-radius: 10px; background: rgba(10,16,30,.94); border: 2px solid #a8894a; color: #eaf2ff;
+  font-size: 14px; box-shadow: 0 6px 20px rgba(0,0,0,.6); display: flex; align-items: center; gap: 8px; pointer-events: none;
+  transition: transform .25s ease, opacity .25s; opacity: 0; }
+#inv-note.in { transform: translate(0, -50%); opacity: 1; }
+#inv-note.out { transform: translate(120%, -50%); opacity: 0; }
+
+#about-pop a:not(.btn) { color: #ffe08a; text-decoration: underline; font-weight: 700; }
+#about-pop a:not(.btn):hover { color: #fff3c0; }
+#about-pop .about-mail { color: #ffd23f !important; cursor: pointer; }
+#about-pop textarea { width: 100%; box-sizing: border-box; resize: vertical; min-height: 90px; padding: 8px; border-radius: 8px;
+  background: rgba(0,0,0,.35); color: #fff; border: 1px solid rgba(255,210,63,.4); font: inherit; font-size: 14px; }
+#about-pop a.btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+/* Perso (18-10): en el móvil (horizontal) el logo baja bajo el menú azul, donde se ve y se puede pulsar */
+.logo-phone { display: none; }
+@media (max-height: 520px) {
+  .menu-left .logo { display: none; }
+  .menu-right .logo-phone { display: block; margin: 2px 0 0; flex: none; }
+  .menu-right .logo-phone .logo-img { width: min(300px, 100%); }
+}
+
+/* Perso (18-10): lo que cambia con la carta de nivel, a su derecha */
+#card-prev { position: fixed; z-index: 300; display: none; min-width: 190px; max-width: 280px; padding: 8px 10px; border-radius: 10px;
+  background: rgba(10,16,30,.95); border: 2px solid #ffd23f; box-shadow: 0 6px 20px rgba(0,0,0,.6); color: #dfe8ff; font-size: 13px; pointer-events: none; }
+#card-prev h4 { margin: 0 0 6px; color: #ffd23f; font-size: 13px; }
+#card-prev .sp-grid { display: grid; grid-template-columns: auto auto; gap: 3px 12px; }
+#card-prev .sp-grid b { text-align: right; color: #fff; }
+#card-prev .sp-grid b.chg { color: #ffd23f; }
+#card-prev .sp-grid b.chg.max { color: #5fe08a; }
+
+/* Perso (18-10): menú de pausa ordenado */
+#scr-pause .pause-keys { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: 6px 22px; margin: 4px auto 10px; }
+#scr-pause .pause-keys span { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+#scr-pause .pause-keys i { font-style: normal; }
+#scr-pause .pause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+#scr-pause .pause-grid .pg-wide { grid-column: 1 / -1; }
+#scr-pause .pause-grid .btn { width: 100%; }
+#scr-pause #pause-sound [data-mute] { display: none; }
+
+/* Perso (18-10): Mejoras > Modificar los movimientos (ficha del Pokémon, aparte) */
+.mv-box { width: min(440px, 96vw); max-height: calc(100vh - 80px); display: flex; flex-direction: column; }
+#mv-detail { overflow-y: auto; min-height: 0; margin-top: 8px; }
+#mv-detail .stage { display: block; margin: 0 auto 6px; }
+#mv-detail .tm-list { max-height: 56vh; }
+@media (max-height: 560px) {
+  #mv-detail .stage { width: 132px; height: 114px; }
+  #mv-detail p { margin: 4px 0 !important; font-size: 12px !important; }
+}
+
+/* Perso (18-10): reanudar una run guardada */
+#resume-pop { position: fixed; inset: 0; z-index: 70; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(4,8,20,.6); }
+#resume-pop .box { width: min(380px, 100%); }
+#resume-pop .stage { width: 120px; height: 96px; display: block; margin: 4px auto; }
+#resume-pop .pause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#resume-pop .pause-grid .pg-wide { grid-column: 1 / -1; }
+#resume-pop .pause-grid .btn { width: 100%; }
+.tm-row.tm-locked { opacity: .62; border-style: dashed; }
+.tm-row.tm-locked:hover { opacity: .9; }
