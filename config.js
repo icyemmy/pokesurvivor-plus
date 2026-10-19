@@ -22,13 +22,21 @@
  *   databaseURL: 'https://your-project-default-rtdb.europe-west1.firebasedatabase.app'
  * };
  */
-window.PS_FIREBASE = {
+window.PS_FIREBASE = 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+// Your web app's Firebase configuration
+const firebaseConfig = {
   apiKey: "AIzaSyDy5OUvFsyP0llY6B_X_nWC2lFfbvE-Y6k",
   authDomain: "pokesurvivorpluscoop.firebaseapp.com",
   projectId: "pokesurvivorpluscoop",
   storageBucket: "pokesurvivorpluscoop.firebasestorage.app",
   messagingSenderId: "816899500478",
   appId: "1:816899500478:web:a5ae203045db7a9b45b1ef"
-  databaseURL: 'https://pokesurvivorpluscoop-default-rtdb.firebaseio.com/'
+  databaseURL: "https://pokesurvivorpluscoop-default-rtdb.firebaseio.com/"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
